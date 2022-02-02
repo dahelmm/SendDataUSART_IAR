@@ -56,6 +56,18 @@ void USART_ini()
   USART_Cmd(USART2,ENABLE);
   
 }
+void sendData(uint8_t *count_p,uint8_t bytes)
+{
+  uint8_t i=0;
+  while(i<bytes)
+  {
+    while(USART_GetFlagStatus(USART2,USART_FLAG_TXE)==RESET)
+    {}
+    USART_SendData(USART2, count_p[i]);
+          i++;
+          
+  }
+}
 void delay(int n)
 {
   while(n>0)
