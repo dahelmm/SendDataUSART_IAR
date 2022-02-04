@@ -1,12 +1,12 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.30.1.114/W32 for ARM                  02/Feb/2022  18:07:54
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  04/Feb/2022  18:08:11
 # Copyright 2007-2018 IAR Systems AB.
 #
 #    Output file  =  H:\IARprojects\Debug\Exe\First.out
 #    Map file     =  H:\IARprojects\Debug\List\First.map
 #    Command line =  
-#        -f C:\Users\dahel\AppData\Local\Temp\EWADD7.tmp
+#        -f C:\Users\dahel\AppData\Local\Temp\EW4735.tmp
 #        (H:\IARprojects\Debug\Obj\main.o
 #        H:\IARprojects\Debug\Obj\startup_stm32f0xx.o
 #        H:\IARprojects\Debug\Obj\stm32f0xx_adc.o
@@ -78,7 +78,7 @@ initialize by copy { rw };
   .intvec            ro code   0x800'0000   0xc0  startup_stm32f0xx.o [1]
                              - 0x800'00c0   0xc0
 
-"P1":                                      0x912
+"P1":                                      0x916
   .text              ro code   0x800'00c0  0x214  stm32f0xx_rcc.o [1]
   .text              ro code   0x800'02d4   0xae  I32DivModFast.o [3]
   .text              ro code   0x800'0382    0x2  startup_stm32f0xx.o [1]
@@ -100,10 +100,8 @@ initialize by copy { rw };
   .text              ro code   0x800'0958    0xa  cexit.o [3]
   .text              ro code   0x800'0962    0x2  startup_stm32f0xx.o [1]
   .text              ro code   0x800'0964   0x14  exit.o [4]
-  Initializer bytes  const     0x800'0978   0x14  <for P2-1>
-  .text              ro code   0x800'098c    0xc  cstartup_M.o [3]
-  .text              ro code   0x800'0998    0x2  startup_stm32f0xx.o [1]
-  .text              ro code   0x800'099a    0x2  startup_stm32f0xx.o [1]
+  Initializer bytes  const     0x800'0978   0x18  <for P2-1>
+  .text              ro code   0x800'0990    0xc  cstartup_M.o [3]
   .text              ro code   0x800'099c    0x2  startup_stm32f0xx.o [1]
   .text              ro code   0x800'099e    0x2  startup_stm32f0xx.o [1]
   .text              ro code   0x800'09a0    0x2  startup_stm32f0xx.o [1]
@@ -131,14 +129,16 @@ initialize by copy { rw };
   .text              ro code   0x800'09cc    0x2  startup_stm32f0xx.o [1]
   .text              ro code   0x800'09ce    0x2  startup_stm32f0xx.o [1]
   .text              ro code   0x800'09d0    0x2  startup_stm32f0xx.o [1]
-  .rodata            const     0x800'09d2    0x0  copy_init3.o [3]
-                             - 0x800'09d2  0x912
+  .text              ro code   0x800'09d2    0x2  startup_stm32f0xx.o [1]
+  .text              ro code   0x800'09d4    0x2  startup_stm32f0xx.o [1]
+  .rodata            const     0x800'09d6    0x0  copy_init3.o [3]
+                             - 0x800'09d6  0x916
 
-"P2", part 1 of 2:                          0x14
-  P2-1                        0x2000'0000   0x14  <Init block>
-    .data            inited   0x2000'0000    0x4  main.o [1]
-    .data            inited   0x2000'0004   0x10  stm32f0xx_rcc.o [1]
-                            - 0x2000'0014   0x14
+"P2", part 1 of 2:                          0x18
+  P2-1                        0x2000'0000   0x18  <Init block>
+    .data            inited   0x2000'0000    0x8  main.o [1]
+    .data            inited   0x2000'0008   0x10  stm32f0xx_rcc.o [1]
+                            - 0x2000'0018   0x18
 
 "P2", part 2 of 2:                         0x800
   CSTACK                      0x2000'0018  0x800  <Block>
@@ -149,8 +149,7 @@ Unused ranges:
 
          From           To    Size
          ----           --    ----
-   0x800'09d2   0x800'ffff  0xf62e
-  0x2000'0014  0x2000'0017     0x4
+   0x800'09d6   0x800'ffff  0xf62a
   0x2000'0818  0x2000'1fff  0x17e8
 
 
@@ -161,10 +160,10 @@ Unused ranges:
           Address      Size
           -------      ----
 Copy (__iar_copy_init3)
-    1 source range, total size 0x14:
-           0x800'0978  0x14
-    1 destination range, total size 0x14:
-          0x2000'0000  0x14
+    1 source range, total size 0x18:
+           0x800'0978  0x18
+    1 destination range, total size 0x18:
+          0x2000'0000  0x18
 
 
 
@@ -179,14 +178,14 @@ command line/config:
     Total:
 
 H:\IARprojects\Debug\Obj: [1]
-    main.o                   404        4        4
+    main.o                   404        8        8
     startup_stm32f0xx.o      320
     stm32f0xx_gpio.o         294
     stm32f0xx_rcc.o          532       16       16
     stm32f0xx_usart.o        280
     system_stm32f0xx.o       296
     ----------------------------------------------
-    Total:                 2 126       20       20
+    Total:                 2 126       24       24
 
 dl6M_tln.a: [2]
     exit.o                     8
@@ -212,7 +211,7 @@ shb_l.a: [4]
 
     Linker created                     20    2 048
 --------------------------------------------------
-    Grand Total:           2 474       40    2 068
+    Grand Total:           2 474       44    2 072
 
 
 *******************************************************************************
@@ -224,7 +223,7 @@ Entry                       Address   Size  Type      Object
 .iar.init_table$$Base    0x800'0918          --   Gb  - Linker created -
 .iar.init_table$$Limit   0x800'092c          --   Gb  - Linker created -
 ?main                    0x800'092d         Code  Gb  cmain.o [3]
-APBAHBPrescTable        0x2000'0004   0x10  Data  Lc  stm32f0xx_rcc.o [1]
+APBAHBPrescTable        0x2000'0008   0x10  Data  Lc  stm32f0xx_rcc.o [1]
 CSTACK$$Base            0x2000'0018          --   Gb  - Linker created -
 CSTACK$$Limit           0x2000'0818          --   Gb  - Linker created -
 GPIO_Init                0x800'051d   0xa2  Code  Gb  stm32f0xx_gpio.o [1]
@@ -243,7 +242,7 @@ USART_Cmd                0x800'0703   0x1c  Code  Gb  stm32f0xx_usart.o [1]
 USART_GetFlagStatus      0x800'0745   0x18  Code  Gb  stm32f0xx_usart.o [1]
 USART_Init               0x800'0645   0xbe  Code  Gb  stm32f0xx_usart.o [1]
 USART_SendData           0x800'072d    0x8  Code  Gb  stm32f0xx_usart.o [1]
-USART_ini                0x800'03d9   0x76  Code  Gb  main.o [1]
+USART_ini                0x800'041b   0x76  Code  Gb  main.o [1]
 __ICFEDIT_region_RAM_end__ {Abs}
                         0x2000'1fff         Data  Gb  <internal module>
 __ICFEDIT_region_RAM_start__ {Abs}
@@ -255,18 +254,18 @@ __cmain                  0x800'092d         Code  Gb  cmain.o [3]
 __exit                   0x800'0965   0x14  Code  Gb  exit.o [4]
 __iar_copy_init3         0x800'08c1   0x30  Code  Gb  copy_init3.o [3]
 __iar_data_init3         0x800'08f1   0x28  Code  Gb  data_init.o [3]
-__iar_program_start      0x800'098d         Code  Gb  cstartup_M.o [3]
+__iar_program_start      0x800'0991         Code  Gb  cstartup_M.o [3]
 __low_level_init         0x800'094b    0x4  Code  Gb  low_level_init.o [2]
 __vector_table           0x800'0000         Data  Gb  startup_stm32f0xx.o [1]
 _call_main               0x800'0939         Code  Gb  cmain.o [3]
 _exit                    0x800'0959         Code  Gb  cexit.o [3]
 _main                    0x800'0947         Code  Gb  cmain.o [3]
-delay                    0x800'0485    0xc  Code  Gb  main.o [1]
+delay                    0x800'040f    0xc  Code  Gb  main.o [1]
 exit                     0x800'094f    0x8  Code  Gb  exit.o [2]
-ff                      0x2000'0000    0x4  Data  Gb  main.o [1]
+ff                      0x2000'0000    0x8  Data  Gb  main.o [1]
 main                     0x800'0491   0x76  Code  Gb  main.o [1]
 port_ini                 0x800'0389   0x50  Code  Gb  main.o [1]
-sendData                 0x800'044f   0x36  Code  Gb  main.o [1]
+sendData                 0x800'03d9   0x36  Code  Gb  main.o [1]
 
 
 [1] = H:\IARprojects\Debug\Obj
@@ -275,8 +274,8 @@ sendData                 0x800'044f   0x36  Code  Gb  main.o [1]
 [4] = shb_l.a
 
   2 474 bytes of readonly  code memory
-     40 bytes of readonly  data memory
-  2 068 bytes of readwrite data memory
+     44 bytes of readonly  data memory
+  2 072 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
