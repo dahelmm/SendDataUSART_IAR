@@ -2544,9 +2544,18 @@
         </group>
     </group>
     <file>
+        <name>$PROJ_DIR$\loadplnm.c</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\main.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\strpolinom.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\strpolinom.h</name>
     </file>
 </project>

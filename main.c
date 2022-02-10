@@ -1,6 +1,17 @@
 #include "stm32f0xx.h"
 #include "main.h"
-double ff = 87.9;
+
+typedef struct polinom;
+typedef struct PlnmToSend;
+
+struct PlnmToSend *poliSend;
+struct polinom *poli;
+
+extern unsigned short LoadPlnmFromMsg (PlnmToSend * mko_send, polinom * plnm, unsigned short l_str);
+
+float ff = 87.9;
+/*unsigned*/ char acceptData[4];
+unsigned char result;
 void port_ini(void)
 {
   GPIO_InitTypeDef GPIO_LEDS_ini;
@@ -27,18 +38,24 @@ void port_ini(void)
   GPIO_Init(GPIOA,&InitA0);
   
 }
-void sendData(uint8_t *count_p,uint8_t bytes)
+//-------------------------------------------
+//
+//-------------------------------------------
+void recieveData(uint8_t *count_p,uint8_t bytes)
 {
   uint8_t i=0;
   while(i<bytes)
   {
     while(USART_GetFlagStatus(USART2,USART_FLAG_TXE)==RESET)
     {}
-    USART_SendData(USART2, count_p[i]);
+    USART_ReceiveData(USART2);
           i++;
           
   }
 }
+//-------------------------------------------
+//
+//-------------------------------------------
 void delay(int n)
 {
   while(n>0)
@@ -46,6 +63,28 @@ void delay(int n)
     n--;
   }
 }
+//-------------------------------------------
+//
+//-------------------------------------------
+    int i = 0;
+
+void USART2_IRQHandler(void)
+{
+  if(USART_GetITStatus(USART2,USART_IT_RXNE)==SET)
+  {
+    USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+    while(i<5003)
+    {
+      //poliSend = USART_ReceiveData(USART2);
+    }
+    LoadPlnmFromMsg(poliSend,poli,16);
+  }
+
+}
+
+//-------------------------------------------
+//
+//-------------------------------------------
 void USART_ini()
 {
   GPIO_InitTypeDef GPIO_Init_USART;
@@ -75,37 +114,43 @@ void USART_ini()
   
   USART_Init(USART2, &USART_InitUser);
   
-  USART_Cmd(USART2,ENABLE);
+  NVIC_EnableIRQ(USART2_IRQn);
   
+  USART_ITConfig(USART2,USART_IT_RXNE, ENABLE);
+
+  USART_Cmd(USART2,ENABLE);
 }
 
 int main()
 {
-  uint8_t array[sizeof(float)];
-  uint8_t *arrData;
-  arrData = (uint8_t*)&ff;
-  for(int i =0;i<sizeof(float);i++)
-  {
-    array[i]=*(arrData++);
-  }
+  
   port_ini();
   USART_ini();
   while(1)
   {
-    if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)==1)
-    {
+    //if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)==1)
+    //{
       delay(5000);
-      sendData(array,4);
-    }
-    else
-    {
-      GPIO_SetBits(GPIOC,GPIO_Pin_8);
-      delay(1000000);
-      GPIO_ResetBits(GPIOC,GPIO_Pin_8);
+      if(acceptData!=0)
+      {
+        GPIO_SetBits(GPIOC,GPIO_Pin_9);
+      }
+      else
+      {
+        GPIO_SetBits(GPIOC,GPIO_Pin_8);
+      }
       
-      GPIO_SetBits(GPIOC,GPIO_Pin_9);
-      delay(1000000);
-      GPIO_ResetBits(GPIOC,GPIO_Pin_9);    }
+   // }
+   // else
+   // {
+//GPIO_SetBits(GPIOC,GPIO_Pin_8);
+    //  delay(1000000);
+   //   GPIO_ResetBits(GPIOC,GPIO_Pin_8);
+      
+    //  GPIO_SetBits(GPIOC,GPIO_Pin_9);
+    //  delay(1000000);
+    //  GPIO_ResetBits(GPIOC,GPIO_Pin_9);    
+    //}
   }
   
   

@@ -1,9 +1,9 @@
-"H:\IARprojects\Lib\src\stm32f0xx_rcc.c"
+"H:\IARprojects\loadplnm.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-H:\IARprojects\Lib\src
+H:\IARprojects
 -I
 H:\IARprojects
 -I
