@@ -5,23 +5,12 @@
 #include "strpolinom.h"
 
 #define SMB_FOR_SIG 8
-#define SD_MAX 32 // ��� load_polinom
-/******************************* ��������� load_polinom ***********************************/
-typedef struct
-{
-    unsigned short SW; //service word
-    unsigned char DW[SD_MAX][2]; //data word
 
-}PlnmToSend;
 
 /*******************************************************************************************/
 unsigned short TransPlnmToMsg(polinom * plnm, PlnmToSend * mko_send)
 {
 
-//    printf("%d\n",sizeof(plnm->strings));
-//    printf("%d\n",sizeof(plnm->strings[0].head));
-//    printf("%d\n",sizeof(plnm->strings[0].p_or_q));
-//    printf("%d\n",sizeof(plnm->strings[0].exist_pq));
   unsigned char * byte_for_copy;
   unsigned short no_ks = 0;
   unsigned short no_sd = 0;
@@ -333,7 +322,7 @@ polinom STRUCTURE;
 float KSI_EL[N_EL_MAX];
 struct bit_map MANY_CONF[MAX_CNFG][N_BIT_MAP];
 
-unsigned int FindConfiguration()
+/*unsigned int FindConfiguration()
 {
 
      struct bit_map    p_of_str[N_BIT_MAP];
@@ -465,14 +454,14 @@ unsigned int FindConfiguration()
      }//for(...i=0;i<...n_str;i++)
 
      return num_rec;
-}
+}*/
 
 void TestingPlnmFromMsg(polinom * PlnmFromMsg)
 {
 
 }
 
-void PrintPolinom(polinom *poli)
+/*void PrintPolinom(polinom *poli)
 {
     for(int i = 0;i<poli->n_str;i++)
     {
@@ -520,9 +509,9 @@ void PrintPolinom(polinom *poli)
         printf("\n");
     }
 
-}
+}*/
 
-void printSendPolinom(PlnmToSend *poli,int size)
+/*void printSendPolinom(PlnmToSend *poli,int size)
 {
     for(int i = 0; i<size;i++)
     {
@@ -535,5 +524,5 @@ void printSendPolinom(PlnmToSend *poli,int size)
         }
         printf("\n");
     }
-}
+}*/
 

@@ -21,14 +21,14 @@
 
 
 //#define SMB_FOR_SIG 8
-//#define SD_MAX 32 // ??? load_polinom
-///******************************* ????????? load_polinom ***********************************/
-//typedef struct
-//{
-//    unsigned short SW; //service word
-//    unsigned char DW[SD_MAX][2]; //data word
+#define SD_MAX 32 // ??? load_polinom
+/******************************* ????????? load_polinom ***********************************/
+typedef struct
+{
+    unsigned short SW; //service word
+    unsigned char DW[SD_MAX][2]; //data word
 
-//}PlnmToSend;
+}PlnmToSend;
 
 
 

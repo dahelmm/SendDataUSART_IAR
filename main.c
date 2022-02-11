@@ -1,17 +1,21 @@
 #include "stm32f0xx.h"
 #include "main.h"
+#include "strpolinom.h"
 
-typedef struct polinom;
-typedef struct PlnmToSend;
+#define GREEN_ON GPIO_SetBits(GPIOC,GPIO_Pin_9);
+#define GREEN_OFF GPIO_ResetBits(GPIOC,GPIO_Pin_9);
+#define BLUE_ON GPIO_SetBits(GPIOC,GPIO_Pin_8);
+#define BLUE_OFF GPIO_ResetBits(GPIOC,GPIO_Pin_8);
 
-struct PlnmToSend *poliSend;
-struct polinom *poli;
 
-extern unsigned short LoadPlnmFromMsg (PlnmToSend * mko_send, polinom * plnm, unsigned short l_str);
 
-float ff = 87.9;
-/*unsigned*/ char acceptData[4];
-unsigned char result;
+polinom polin;
+PlnmToSend poliSend;
+
+
+
+extern unsigned short LoadPlnmFromMsg (struct PlnmToSend * mko_send, struct polinom * plnm, unsigned short l_str);
+
 void port_ini(void)
 {
   GPIO_InitTypeDef GPIO_LEDS_ini;
@@ -41,18 +45,7 @@ void port_ini(void)
 //-------------------------------------------
 //
 //-------------------------------------------
-void recieveData(uint8_t *count_p,uint8_t bytes)
-{
-  uint8_t i=0;
-  while(i<bytes)
-  {
-    while(USART_GetFlagStatus(USART2,USART_FLAG_TXE)==RESET)
-    {}
-    USART_ReceiveData(USART2);
-          i++;
-          
-  }
-}
+
 //-------------------------------------------
 //
 //-------------------------------------------
@@ -66,18 +59,20 @@ void delay(int n)
 //-------------------------------------------
 //
 //-------------------------------------------
-    int i = 0;
-
+int i = 0;
+unsigned char receive[264];
+unsigned char* pArrayByte;
 void USART2_IRQHandler(void)
 {
   if(USART_GetITStatus(USART2,USART_IT_RXNE)==SET)
   {
     USART_ClearITPendingBit(USART2, USART_IT_RXNE);
-    while(i<5003)
+    while((i<264))
     {
-      //poliSend = USART_ReceiveData(USART2);
+      receive[i] = USART_ReceiveData(USART2);
+      i++;
     }
-    LoadPlnmFromMsg(poliSend,poli,16);
+
   }
 
 }
@@ -126,32 +121,17 @@ int main()
   
   port_ini();
   USART_ini();
-  while(1)
+  //delay(5000);
+  if(receive!=0) //чтобы видеть, что информация поступает
   {
-    //if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)==1)
-    //{
-      delay(5000);
-      if(acceptData!=0)
-      {
-        GPIO_SetBits(GPIOC,GPIO_Pin_9);
-      }
-      else
-      {
-        GPIO_SetBits(GPIOC,GPIO_Pin_8);
-      }
-      
-   // }
-   // else
-   // {
-//GPIO_SetBits(GPIOC,GPIO_Pin_8);
-    //  delay(1000000);
-   //   GPIO_ResetBits(GPIOC,GPIO_Pin_8);
-      
-    //  GPIO_SetBits(GPIOC,GPIO_Pin_9);
-    //  delay(1000000);
-    //  GPIO_ResetBits(GPIOC,GPIO_Pin_9);    
-    //}
+    GREEN_ON;
   }
+  if(i>=263)
+  {
+    LoadPlnmFromMsg(((struct PlnmToSend*)receive),&polin,16);
+  }
+  
+}
   
   
   
