@@ -1,0 +1,253 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  04/Mar/2022  15:01:03
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Exe\STM32L152-EVAL.out
+#    Map file     =  
+#        H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\List\STM32L152-EVAL.map
+#    Command line =  
+#        -f C:\Users\dahel\AppData\Local\Temp\EWB7C6.tmp
+#        ("H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\main.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\misc.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_adc.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_aes.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_aes_util.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_comp.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_crc.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_dac.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_dbgmcu.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_dma.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_exti.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_flash.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_flash_ramfunc.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_fsmc.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_gpio.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_i2c.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_it.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_iwdg.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_lcd.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_opamp.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_pwr.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_rcc.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_rtc.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_sdio.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_spi.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_syscfg.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_tim.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_usart.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\stm32l1xx_wwdg.o"
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj\system_stm32l1xx.o"
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
+#        --no_out_extension -o
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Exe\STM32L152-EVAL.out"
+#        --map
+#        "H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\List\STM32L152-EVAL.map"
+#        --config H:\STM32L1\Projects\Template\stm32l1xx_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x807'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'3fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0x40
+  .intvec            ro code   0x800'0000   0x40  vector_table_M.o [3]
+                             - 0x800'0040   0x40
+
+"P1":                                      0x43b
+  .text              ro code   0x800'0040  0x120  main.o [1]
+  .text              ro code   0x800'0160   0xd0  stm32l1xx_rcc.o [1]
+  .text              ro code   0x800'0230   0x80  stm32l1xx_gpio.o [1]
+  .text              ro code   0x800'02b0   0xc2  stm32l1xx_usart.o [1]
+  .text              ro code   0x800'0372   0x38  packbits_init_single.o [3]
+  .text              ro code   0x800'03ac   0x28  data_init.o [3]
+  .iar.init_table    const     0x800'03d4   0x10  - Linker created -
+  .text              ro code   0x800'03e4   0x1e  cmain.o [3]
+  .text              ro code   0x800'0402    0x4  low_level_init.o [2]
+  .text              ro code   0x800'0406    0x4  exit.o [2]
+  .text              ro code   0x800'040c    0xa  cexit.o [3]
+  .text              ro code   0x800'0418   0x14  exit.o [4]
+  .text              ro code   0x800'042c   0x10  stm32l1xx_it.o [1]
+  .text              ro code   0x800'043c    0xc  cstartup_M.o [3]
+  .rodata            const     0x800'0448    0x0  packbits_init_single.o [3]
+  Initializer bytes  const     0x800'0448   0x33  <for P2-1>
+                             - 0x800'047b  0x43b
+
+"P2", part 1 of 2:                          0x40
+  P2-1                        0x2000'0000   0x40  <Init block>
+    .data            inited   0x2000'0000   0x1c  stm32l1xx_rcc.o [1]
+    .data            inited   0x2000'001c   0x20  system_stm32l1xx.o [1]
+    .bss             inited   0x2000'003c    0x4  main.o [1]
+                            - 0x2000'0040   0x40
+
+"P2", part 2 of 2:                         0x400
+  CSTACK                      0x2000'0040  0x400  <Block>
+    CSTACK           uninit   0x2000'0040  0x400  <Block tail>
+                            - 0x2000'0440  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'047b   0x807'ffff  0x7'fb85
+  0x2000'0440  0x2001'3fff  0x1'3bc0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x33 (79% of destination):
+           0x800'0448  0x33
+    1 destination range, total size 0x40:
+          0x2000'0000  0x40
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj: [1]
+    main.o                      288        4        4
+    stm32l1xx_gpio.o            128
+    stm32l1xx_it.o               16
+    stm32l1xx_rcc.o             208       22       28
+    stm32l1xx_usart.o           194
+    system_stm32l1xx.o                    25       32
+    -------------------------------------------------
+    Total:                      834       51       64
+
+dl7M_tln.a: [2]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+rt7M_tl.a: [3]
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    packbits_init_single.o       56
+    vector_table_M.o             64
+    -------------------------------------------------
+    Total:                      212
+
+shb_l.a: [4]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          6
+    Linker created                        16    1 024
+-----------------------------------------------------
+    Grand Total:              1 080       67    1 088
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base    0x800'03d4         --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'03e4         --   Gb  - Linker created -
+?main                    0x800'03e5        Code  Gb  cmain.o [3]
+AHBPrescTable           0x2000'0028  0x10  Data  Gb  system_stm32l1xx.o [1]
+APBAHBPrescTable        0x2000'000c  0x10  Data  Lc  stm32l1xx_rcc.o [1]
+BusFault_Handler         0x800'0433   0x2  Code  Gb  stm32l1xx_it.o [1]
+CSTACK$$Base            0x2000'0040         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0440         --   Gb  - Linker created -
+DebugMon_Handler         0x800'0439   0x2  Code  Gb  stm32l1xx_it.o [1]
+GPIO_Init                0x800'0231  0x5e  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_PinAFConfig         0x800'028f  0x22  Code  Gb  stm32l1xx_gpio.o [1]
+HardFault_Handler        0x800'042f   0x2  Code  Gb  stm32l1xx_it.o [1]
+LEDS_ini                 0x800'00f7  0x2a  Code  Gb  main.o [1]
+MemManage_Handler        0x800'0431   0x2  Code  Gb  stm32l1xx_it.o [1]
+NMI_Handler              0x800'042d   0x2  Code  Gb  stm32l1xx_it.o [1]
+PLLMulTable             0x2000'0000   0xc  Data  Lc  stm32l1xx_rcc.o [1]
+PLLMulTable             0x2000'001c   0xc  Data  Gb  system_stm32l1xx.o [1]
+PendSV_Handler           0x800'043b   0x2  Code  Gb  stm32l1xx_it.o [1]
+RCC_AHBPeriphClockCmd    0x800'01f1  0x14  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB1PeriphClockCmd   0x800'0205  0x14  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_GetClocksFreq        0x800'0161  0x90  Code  Gb  stm32l1xx_rcc.o [1]
+Region$$Table$$Base      0x800'03d4         --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'03e4         --   Gb  - Linker created -
+SVC_Handler              0x800'0437   0x2  Code  Gb  stm32l1xx_it.o [1]
+SysTick_Handler          0x800'0069   0xe  Code  Gb  main.o [1]
+SystemCoreClock         0x2000'0038   0x4  Data  Gb  system_stm32l1xx.o [1]
+USART3_ini               0x800'0077  0x80  Code  Gb  main.o [1]
+USART_Cmd                0x800'0351  0x14  Code  Gb  stm32l1xx_usart.o [1]
+USART_Init               0x800'02b1  0x9a  Code  Gb  stm32l1xx_usart.o [1]
+USART_SendData           0x800'0365   0x8  Code  Gb  stm32l1xx_usart.o [1]
+UsageFault_Handler       0x800'0435   0x2  Code  Gb  stm32l1xx_it.o [1]
+__cmain                  0x800'03e5        Code  Gb  cmain.o [3]
+__exit                   0x800'0419  0x14  Code  Gb  exit.o [4]
+__iar_data_init3         0x800'03ad  0x28  Code  Gb  data_init.o [3]
+__iar_packbits_init_single3
+                         0x800'0373  0x38  Code  Gb  packbits_init_single.o [3]
+__iar_program_start      0x800'043d        Code  Gb  cstartup_M.o [3]
+__low_level_init         0x800'0403   0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000        Data  Gb  vector_table_M.o [3]
+_call_main               0x800'03f1        Code  Gb  cmain.o [3]
+_exit                    0x800'040d        Code  Gb  cexit.o [3]
+_main                    0x800'03ff        Code  Gb  cmain.o [3]
+exit                     0x800'0407   0x4  Code  Gb  exit.o [2]
+main                     0x800'0121  0x28  Code  Gb  main.o [1]
+sysTickCount            0x2000'003c   0x4  Data  Lc  main.o [1]
+sysTickDalayInit         0x800'0041  0x28  Code  Gb  main.o [1]
+
+
+[1] = H:\STM32L1\Projects\Template\STM32L1XX_MD(STM32L1xxxBxx)\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  1 080 bytes of readonly  code memory
+     67 bytes of readonly  data memory
+  1 088 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,15 @@
+"D:\IAR\arm\bin\armproc.dll" 
+
+"D:\IAR\arm\bin\armstlink2.dll" 
+
+"H:\STM32L1\Projects\Template\STM32L1XX_HD(STM32L1xxxDxx)\Exe\STM32L152D-EVAL.out" 
+
+--plugin="D:\IAR\arm\bin\armbat.dll" 
+
+--device_macro="D:\IAR\arm\config\debugger\ST\STM32L1xx.dmac" 
+
+--flash_loader="D:\IAR\arm\config\flashloader\ST\FlashSTM32L16xxx.board" 
+
+
+
+
